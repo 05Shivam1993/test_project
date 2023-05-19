@@ -1,0 +1,30 @@
+<html>
+    <style>
+        table, th, td {
+          border:1px solid black;
+        }
+        </style>
+    <body>
+    <center>
+    <a href="/accounts/add">Add more item</a>
+    <br><br>
+    {% if data %}
+    <table>
+        <tr>
+          <th>Item Name</th>
+        </tr>
+        {% for item in data %}
+            {% for key, value in item.items %}
+                <tr>
+                <td>{{value}}</td>
+                </tr>
+            {% endfor %}
+        {% endfor%}
+      
+      </table>
+      {% else %}
+      <p>No records</p>
+      {% endif %}
+    </center>
+    </body>
+</html>
